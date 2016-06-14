@@ -1,0 +1,35 @@
+{
+  "name": "-xiaomi-mitv2-remote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongkongkiwi/node-xiaomi-mitv2-remote.git"
+  },
+  "keywords": [
+    "mitv2",
+    "xiaomi",
+    "remote",
+    "mitv",
+    "mibox"
+  ],
+  "author": "Andy Savage <andy@savage.hk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hongkongkiwi/node-xiaomi-mitv2-remote/issues"
+  },
+  "homepage": "https://github.com/hongkongkiwi/node-xiaomi-mitv2-remote#readme",
+  "dependencies": {
+    "bluebird": "^3.4.0",
+    "request": "^2.72.0",
+    "request-promise": "^3.0.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0"
+  }
+}

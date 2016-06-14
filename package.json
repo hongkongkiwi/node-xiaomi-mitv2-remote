@@ -1,10 +1,10 @@
 {
-  "name": "-xiaomi-mitv2-remote",
+  "name": "xiaomi-mitv2-remote",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node.js module to get control a Xiaomi MiTV2 over the network. Should also work with other MiTV's.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

@@ -154,6 +154,62 @@ MITV.prototype.systemCleanInfo = function(callback) {
   });
 };
 
+MITV.prototype.getSystemInfo = function(callback) {
+  var options = {
+    url: "/controller?action=getsysteminfo",
+  };
+
+  this.r(options, function(err, res, body) {
+    if (err) return callback(err);
+    if (res.statusCode !== 200) {
+      return callback("Invalid Response from Server " + res.statusCode);
+    }
+    if (body.msg !== "success" || body.status !== 0) {
+      return callback("Server returned (" + body.status + ") " + body.msg);
+    }
+    callback(null, body.data);
+  });
+};
+
+MITV.prototype.getRemoteUpgradeInfo = function(callback) {
+  var options = {
+    url: "/remoteUpgradeRequest?action=getUpgradeInfo",
+  };
+
+  this.r(options, function(err, res, body) {
+    if (err) return callback(err);
+    if (res.statusCode !== 200) {
+      return callback("Invalid Response from Server " + res.statusCode);
+    }
+    callback(null, body);
+  });
+};
+
+MITV.prototype.startRemoteUpgrade = function(callback) {
+  var options = {
+    url: "/remoteUpgradeRequest?action=startUpgrade",
+  };
+
+  console.log('UNIMPLEMENTED!'); // TODO: Implement Me
+};
+
+MITV.prototype.setVolume = function(volume, callback) {
+  var options = {
+    url: "/general?action=setVolum&volum=%d&ts=%s&sign=%s",
+  };
+
+  console.log('UNIMPLEMENTED!'); // TODO: Implement Me
+};
+
+MITV.prototype.modifyDeviceName = function(deviceName, callback) {
+  var options = {
+    url: "/general?action=modifyDeviceName&name=%s&ts=%s&sign=%s",
+  };
+
+  console.log('UNIMPLEMENTED!'); // TODO: Implement Me
+};
+
+
 MITV.prototype.isAlive = function(callback) {
   var options = {
     url: "/request?action=isalive",
@@ -192,5 +248,12 @@ var mitv = new MITV("192.168.1.154");
 // });
 // mitv.startApp("com.xiaomi.mitv.mediaexplorer", function(err) {
 //   if (err) return console.error(err);
-//   console.log();
 // });
+// mitv.getSystemInfo(function(err, info) {
+//   if (err) return console.error(err);
+//   console.log(info);
+// });
+mitv.getRemoteUpgradeInfo(function(err, info) {
+  if (err) return console.error(err);
+  console.log(info);
+});

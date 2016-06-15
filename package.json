@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hongkongkiwi/node-xiaomi-mitv2-remote.git"
+    "url": "https://github.com/hongkongkiwi/node-xiaomi-mitv2-remote.git"
   },
   "keywords": [
     "mitv2",
@@ -26,7 +26,6 @@
   "dependencies": {
     "bluebird": "^3.4.0",
     "request": "^2.72.0",
-    "request-promise": "^3.0.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
